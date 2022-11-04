@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calcolatrice Fruttata</title>
+</head>
+
+<body>
+    
+    <header>
+        <h1>LA CALCOLA BANANE</h1>
+    </header>
+
+    <input id="numeri" placeholder="Conta le tue banane!" type="text">
+
+    <!--CALCOLATRICE-->
+
+    <div class="contenitore">
+
+        <div class="content">
+        <button class="box" data-simbolo="%" onclick="aggiungiCifra(this)">%</button>
+        <button class="box" data-simbolo="**" onclick="aggiungiCifra(this)">x°</button>
+        <button class="box" data-simbolo="(" onclick="aggiungiCifra(this)">(</button>
+        <button class="box" data-simbolo=")" onclick="aggiungiCifra(this)">)</button>
+        </div>
+        <div class="content">
+        <button class="number" class="box" data-simbolo="7" onclick="aggiungiCifra(this)">7</button>
+        <button class="number" class="box" data-simbolo="8" onclick="aggiungiCifra(this)">8</button>
+        <button class="number" class="box" data-simbolo="9" onclick="aggiungiCifra(this)">9</button>
+        <button class="box" data-simbolo="*" onclick="aggiungiCifra(this)">x</button>
+        </div>
+        <div class="content">
+        <button class="number" class="box" data-simbolo="4" onclick="aggiungiCifra(this)">4</button>
+        <button class="number" class="box" data-simbolo="5" onclick="aggiungiCifra(this)">5</button>
+        <button class="number" class="box" data-simbolo="6" onclick="aggiungiCifra(this)">6</button>
+        <button class="box" data-simbolo="/" onclick="aggiungiCifra(this)">÷</button>
+        </div>
+        <div class="content">
+        <button class="number" class="box" data-simbolo="1" onclick="aggiungiCifra(this)">1</button>
+        <button class="number" class="box" data-simbolo="2" onclick="aggiungiCifra(this)">2</button>
+        <button class="number" class="box" data-simbolo="3" onclick="aggiungiCifra(this)">3</button>
+        <button class="box" data-simbolo="-" onclick="aggiungiCifra(this)">-</button>
+        </div>
+        <div class="content">    
+        <button class="number" class="box" data-simbolo="0" onclick="aggiungiCifra(this)">0</button>
+        <button class="number" class="box" data-simbolo="00" onclick="aggiungiCifra(this)">00</button>
+        <button class="box" data-simbolo="." onclick="aggiungiCifra(this)">.</button>
+        <button class="box" data-simbolo="+" onclick="aggiungiCifra(this)">+</button>
+        </div>
+        <div class="content">
+        <button class="boxdoppio" onclick="tot()">=</button>
+        <button class="boxdoppio" onclick="svuota()">C</button>
+        </div>
+    </div>
+
+        <!--BANANA THEME-->
+
+        <iframe width="530" height="315" src="https://www.youtube.com/embed/LH5ay10RTGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <!--COLLEGAMENTO SCRIPT-->
+
+    <script src="Calcolatrice.js"></script>
+</body>
+</html>
