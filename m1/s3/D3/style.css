@@ -1,0 +1,58 @@
+body{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWSKvabfkpN0J8xLNLKEGkIWHua4K4kiSPtQ&usqp=CAU);
+}
+
+.content{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-top: 12%;
+    margin-bottom: 5em;
+}
+
+input{
+    width: 40em;
+    height: 3em;
+    margin-right: 3em;
+    border-style: double;
+    border-color: rgb(98, 192, 10);
+}
+
+#aggiungi{
+    font-weight: 600;
+    width: 12em;
+    height:  3.5em;
+    color: rgb(201, 249, 249);
+    background-color: rgb(231, 99, 215);
+}
+
+#aggiungi:hover , .fakebutton:hover{
+    color: rgb(248, 229, 63);
+    background-color: rgb(47, 189, 4);
+}
+
+.fakebutton{ 
+ background-color: rgb(224, 17, 17);
+}
+
+#lista{ 
+    background-color: rgb(243, 218, 59);
+    margin-top: 2em;
+    padding: 1em;
+    font-size: x-large;
+    border-bottom-right-radius: 50px;
+    
+}
+p{
+    margin-bottom: 0;
+}
+p:hover{
+    cursor: pointer;
+}
+.puntolista{
+    margin-top: 0.3em;
+    margin-bottom: 2em;
+    border-left: dotted;
+    border-left-color: white;
+}
