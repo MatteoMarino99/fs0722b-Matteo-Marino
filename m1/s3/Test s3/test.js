@@ -21,7 +21,7 @@ console.log(sum);
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
 
-var random = Math.floor(Math.random()*21);
+var random = Math.floor(Math.random()*21) //uso math.random con math.floor per generare un numero causuale intero e con *21 genererà numeri casuali da 0 a 20
 
 console.log(random);
 
@@ -32,7 +32,7 @@ console.log(random);
 var me = {
   name: 'Matteo',
   surname: 'Marino',
-  age: 23
+  age: 23,
 }
 console.log(me);
 
@@ -71,7 +71,7 @@ console.log(me);
 */
 
 function dice() {
-  var numCasuale = Math.floor(Math.random()*6 + 1);
+  var numCasuale = Math.floor(Math.random()*6 + 1); //anche qui uso Math per generare un numero casuale. *6 ottnego numeri casuali da 0 a 5, sommandoli di 1 diventeranno da 1 a 6
   return numCasuale
 }
 console.log(dice());
@@ -81,12 +81,12 @@ console.log(dice());
 */
 
 function whoIsBigger(n1, n2) {
-  if (n1 > n2) {
-    return n1
-  } if (n1 < n2) {
-    return n2
+  if (n1 > n2) { // imposto la condizione per la quale se il primo numero dato è maggiore del secondo
+    return n1 //mi ritorna il primo
+  } if (n1 < n2) { // al contrario
+    return n2 // mi ritorna il secondo
   } else {
-    return 'I numeri si equivalgono'
+    return 'I numeri si equivalgono' // terza condizione è nel caso i due numeri siano uguali. Mi tornerà dunque una stringa.
   }
 }
 console.log(whoIsBigger(5, 9))
@@ -110,10 +110,10 @@ console.log(splitMe('I love pizza'));
 
 function deleteOne(str, boolean) {
   if (boolean == true) { //imposto la condizione 
-    str = str.substring(1);
+    str = str.substring(1); // al verificarsi della condizione tramite il metodo .substring rimuovo il primo carattere
     return str
   } else {
-    str = str.slice(-0, -1);
+    str = str.slice(-0, -1); // tramite .slice() elimino l'ultimo carattere
     return str
   }
 }
@@ -135,18 +135,25 @@ console.log(onlyLetters('Ho 2 gatti'));
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
 
-//function isThisAnEmail(str) {
+function isThisAnEmail(str) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(str)) { // in questa condizione chiedo utilizzando .test() di controllare se all'interno della stringa ricevuta rispecchi le caratteristiche che abbiamo indicato tramite l'espressione regolare'/ /'
+    return true // se si allora ritornera un true
+  } else { // altrimenti un false
+    return false
+  }
+}
+console.log(isThisAnEmail('matteomarino1599@gmail.com'))
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
 
 function getWeekDay(date) { //creo una funzione che accetta come parametro una data
-  let giorniSett = ['DOM', 'LUN', 'MAR', 'MER', 'GIO', 'VEN', 'SAB']; //Creo un array con i giorni della settimana, che assegnero al giorno della settimana
-  return giorniSett[date.getDay()]; // prendo il numero del giorno della settimana con la quale prenderò il giorno della settimana corretto
+ let giorniSett = ['DOM', 'LUN', 'MAR', 'MER', 'GIO', 'VEN', 'SAB']; //Creo un array con i giorni della settimana, che assegnero al giorno della settimana
+ return giorniSett[date.getDay()]; // prendo il numero del giorno della settimana con la quale prenderò il giorno della settimana corretto
 }
-let data = new Date(2022, 11, 11); // prendo la data di oggi sulla quale svolgo la funzione
-console.log( getWeekDay(data));
+let data = new Date(2022, 11, 13); // prendo la data di oggi sulla quale svolgo la funzione
+console.log(getWeekDay(data));
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -237,15 +244,15 @@ console.log(searchByTitle()) */
 */
 
 function selectionId() {
-  return document.querySelector('#container');
+  return document.querySelector('#container'); // uso querySelector per selezionare l'elemento con il determinato id tramite scrittura CSS
 }
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 
-function selectorTag() {
-  
+function tagSelector() {
+  return document.getElementsByTagName('td') // Sfrutto getElementsByTagName  per selezionare l'elemento tramite il nome del tag
 }
 
 /* ESERCIZIO 22
@@ -255,18 +262,38 @@ function selectorTag() {
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
+function backcolor() {
+return document.getElementsByTagName('a').style.background = '#FF0000'; //seleziono gli elementi hyperlink tramite tag <a> e cambio la sua proprietà stile background impostandone il colore.
+}
+
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
 
+function addLi() {
+  let li = document.createElement('li'); // creo l'elemento
+  document.querySelector('#myList').append(li); //seleziono l'elemento a cui collegarlo tramite il querySelector
+  return document.querySelector('#myList')
+}
+
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
+function svuotatore() {
+  document.getElementById('#myList').remove(li); // seleziono l' elemento da cui rimuovere <li> tramite il metodo 'remove'
+  return document.getElementById('#myList')
+}
+
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
+
+function aggClasse() {
+  document.getElementsByTagName('tr').classList.add('test'); //  seleziono l' elemento tramite tagName e aggiungo una classe utilizzando il metodo 'classList'
+  return document.querySelectorAll('.test')
+}
 
 // [EXTRA] JS Avanzato
 
@@ -297,6 +324,19 @@ function selectorTag() {
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
+
+function isItPrime(n) { // i numeri primi sono divisibili si distunguono dal resto per l'essere divisibili solo per 1 e per se stessi. Dunque per poter  controllare se il numero fornito è un numero primo, devo creare un ciclo che mi permetta di controllare se n  è divisibile  per almeno un numero a partire da 2 ad arrivare fino ad arrivare al numero precedente a se stesso.
+  if ( n == 1 || n == 2 ) { // per questo mi serve impostare manualmente la condizione per la quale se n è uguale a 1 o 2, è allora un numero primo
+    return true;
+}
+for ( var x = 2; x < n; x++ ) { // imposto il ciclo che mi permette sfruttando la condizione al suo interno, dividera n per tutti i numeri che sono contenuti nell' intervallo tra 2 e se stesso (escludendo ovviamente se stesso)
+    if ( n % x == 0 ) { //Se il numero dato sarà divisibile, non sarà dunque un numero primo
+        return false; // e ritornerà false
+    }
+} // altrimenti se non sarà divisibile
+return true; // ritornera true
+};
+console.log(isItPrime(17))
 
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
